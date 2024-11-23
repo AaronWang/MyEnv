@@ -1,7 +1,4 @@
 
-
-
-
 "显示语法错误
 " Plug 'scrooloose/syntastic'
 " set statusline+=%#warningmsg#
