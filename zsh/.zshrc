@@ -147,8 +147,12 @@ alias co='gh copilot explain'
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
+# stop pop up warning message when use zsh
 ZSH_DISABLE_COMPFIX=true
 
+powerline-daemon -q
+POWERLINE_BASH_CONTINUATION=1
+POWERLINE_BASH_SELECT=1
 # 配置 powerline status,先git clone powerline 到/usr/local/
 # powerline 依赖python 的包 powerline-status ， pip install powerline-status
 # pip install --upgrade powerline-status  python版本升级，需要更新powerline-status包
