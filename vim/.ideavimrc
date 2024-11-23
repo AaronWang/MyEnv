@@ -4,7 +4,6 @@
 " Ideavim-EasyMotion   "keep input
 " KJump
 " Auto Switch Input Source
-"
 
 " use a visual bell instead of beeping
 set vb t_vb=
