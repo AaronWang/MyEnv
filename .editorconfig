@@ -1,0 +1,20 @@
+# Editor configuration, see https://editorconfig.org
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 4
+# insert_final_newline = true # 这行会在不输入的时候自动添加一个空行，不建议开启
+trim_trailing_whitespace = true
+max_line_length = 120
+
+[*.{ts,js,scss,css}]
+quote_type = single
+
+[*.html]
+quote_type = double
+
+[*.md]
+max_line_length = off
+trim_trailing_whitespace = false

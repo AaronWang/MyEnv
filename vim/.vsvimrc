@@ -1,0 +1,65 @@
+:set ignorecase
+:set hlsearch
+" :set nocompatible
+" :set noundofile
+" :set nobackup
+"共享windows 剪切板
+:set clipboard=unnamed,unamedplus
+:set ignorecase  "搜索忽略大小写  ":set smartcase   "如果有一个大写字母，自动切换到case sensitive
+:set autoindent   "继承前一行的缩进方式，特别适用于多行注释
+:set ts=4    "为文本输入设置 set tabstop=4   （tab） 为4个空格
+:set tabstop=4
+:set softtabstop=4
+:set shiftwidth=4   " 设置之后 shift +  <> 缩进 4个 空格
+:set sw=4  "缩进尺寸为4个空格
+:set expandtab    "expandtab 缩进用空格来表示，noexpandtab 则是用制表符表示一个缩进。
+
+"不要生成swap文件，当buffer被丢弃的时候隐藏它
+" :set bufhidden=hide
+" :set noswapfile
+" :set noundofile "去除 .un~ 文件，persistent undo 功能。关闭文件再打开，还可以undo
+:set incsearch
+" :set foldmethod=syntax   "设置折叠，indent,    zo或hl左右 打开折叠，zc 折叠
+"打开文件是默认不折叠代码
+" :set foldlevelstart=99
+" f/b page, up/down half page
+nmap gk <C-u>
+vmap gk <C-u>
+nmap gj <C-d>
+vmap gj <C-d>
+
+" nmap gf <C-f>
+" vmap gf <C-f>
+" nmap gb <C-b>
+" vmap gb <C-b>
+"
+" switch window
+nmap wh <C-W>h
+nmap wj <C-W>j
+nmap wk <C-W>k
+nmap wl <C-W>l
+nmap wp <C-W>p
+"th tl move to left/right tab
+nmap th gT
+nmap tl gt
+
+" use a visual bell instead of beeping
+" :set vb t_vb=
+
+" it is only for visual studio
+" back
+" nnoremap gb :vsc View.NavigateBackward<CR>
+" forward
+" nnoremap fw :vsc View.NavigateForward<cr>
+
+" <C-A-L> format
+" nnoremap fm :vsc Edit.FormatDocument<CR>
+" vnoremap fm :vsc Edit.FormatSelection<CR>
+
+" PeasyMotion
+" nnoremap ; gS:vsc Tools.InvokePeasyMotion<CR>
+nmap s gS:vsc Tools.InvokePeasyMotionTwoCharJump<CR>
+"
+"AceJump
+nmap f gS:vsc Tools.InvokeAceJumpCommand<CR>
+

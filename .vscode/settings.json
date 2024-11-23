@@ -1,0 +1,11 @@
+{
+    //git doc settings
+    "gitdoc.enabled": true,
+    "git.autofetch": true,
+    //"gitdoc.autoPull": "onCommit",
+    "gitdoc.autoPush": "onCommit",
+    "gitdoc.autoPull": "afterDelay",
+    // "gitdoc.autoPush": "afterDelay",
+    "gitdoc.commitOnClose": true,
+    "gitdoc.pullOnOpen": true
+}
