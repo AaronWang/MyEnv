@@ -4,6 +4,7 @@
 
 ```zsh
 chsh -s /bin/zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/AaronWang/MyEnv.git ~/MyEnv
 
 ln -s ~/MyEnv/zsh/.zshrc ~/.zshrc
