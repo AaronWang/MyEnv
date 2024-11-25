@@ -154,7 +154,7 @@ ZSH_DISABLE_COMPFIX=true
 # powerline 依赖python 的包 powerline-status ， pip install powerline-status
 # 安装不成功，pip install --upgrade powerline-status  python版本升级，需要更新powerline-status包
 export PATH=/usr/local/powerline/scripts:$PATH
-. /usr/local/powerline/powerline/bindings/zsh/powerline.zsh
+source /usr/local/powerline/powerline/bindings/zsh/powerline.zsh
 
 TERM=xterm
 export TERM
