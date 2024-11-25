@@ -10,6 +10,12 @@ cd ..
 rm -rf fonts
 ```
 
+## powerline bar
+
+```zsh
+git clone https://github.com/powerline/powerline.git /usr/local/powerline
+```
+
 ## install nerd font
 
 ```zsh
