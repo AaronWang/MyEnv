@@ -13,7 +13,7 @@ rm -rf fonts
 ## powerline bar
 
 ```zsh
-git clone https://github.com/powerline/powerline.git /usr/local/powerline
+sudo git clone https://github.com/powerline/powerline.git /usr/local/powerline
 ```
 
 ## install nerd font
@@ -35,6 +35,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
+brew install autojump
 ```
 
 ## setup my zsh, vim environments
