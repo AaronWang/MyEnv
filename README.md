@@ -36,6 +36,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 brew install autojump
+brew install autoenv
 ```
 
 ## setup my zsh, vim environments
