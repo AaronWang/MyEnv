@@ -109,7 +109,7 @@ set guifont=Hack\ Nerd\ Font:h12
 "
 " for ideavim only
 set keep-english-in-normal
-" use ideavim-easymotion plugin
+" use ideavim-easymotion plugin, must installed in Android Studio
 " usage
 set easymotion
 " nmap f <Leader><Leader>w
