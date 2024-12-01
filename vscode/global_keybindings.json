@@ -1,3 +1,261 @@
-// 用户全局配置文件：~/Library/Application Support/Code/User/settings.json
-// this settings file is for configuring the global settings
-{}
+// 用户全局配置文件：~/Library/Application Support/Code/User/keybindings.json
+// this keybindings file is for configuring the global key bindings
+// ln -s ~/Library/Application\ Support/Code/User/keybindings.json ~/MyEnv/vscode/global_keybindings.json
+[
+    {
+        "key": "cmd+\\",
+        "command": "editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+space",
+        "command": "-editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+l cmd+l",
+        "command": "leetcode.testSolution"
+    },
+    {
+        "key": "cmd+l cmd+s",
+        "command": "leetcode.submitSolution"
+    },
+    {
+        "key": "cmd+\\",
+        "command": "toggleSuggestionDetails",
+        "when": "suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "ctrl+space",
+        "command": "-toggleSuggestionDetails",
+        "when": "suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "cmd+\\",
+        "command": "-workbench.action.splitEditor"
+    },
+    {
+        "key": "cmd+\\",
+        "command": "-workbench.action.terminal.split",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+f",
+        "command": "editor.action.formatDocument",
+        "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+alt+f",
+        "command": "-editor.action.formatDocument",
+        "when": "editorHasDocumentFormattingProvider && editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+f",
+        "command": "editor.action.formatDocument.none",
+        "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorHasDocumentFormattingProvider && !editorReadonly"
+    },
+    {
+        "key": "shift+alt+f",
+        "command": "-editor.action.formatDocument.none",
+        "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorHasDocumentFormattingProvider && !editorReadonly"
+    },
+    {
+        "key": "cmd+enter",
+        "command": "editor.action.quickFix",
+        "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+.",
+        "command": "-editor.action.quickFix",
+        "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+enter",
+        "command": "problems.action.showQuickFixes",
+        "when": "problemFocus"
+    },
+    {
+        "key": "cmd+.",
+        "command": "-problems.action.showQuickFixes",
+        "when": "problemFocus"
+    },
+    {
+        "key": "cmd+enter",
+        "command": "settings.action.editFocusedSetting",
+        "when": "inSettingsSearch"
+    },
+    {
+        "key": "cmd+.",
+        "command": "-settings.action.editFocusedSetting",
+        "when": "inSettingsSearch"
+    },
+    {
+        "key": "cmd+r",
+        "command": "editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "f2",
+        "command": "-editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+f2",
+        "command": "editor.action.marker.nextInFiles",
+        "when": "editorFocus"
+    },
+    {
+        "key": "f8",
+        "command": "-editor.action.marker.nextInFiles",
+        "when": "editorFocus"
+    },
+    {
+        "key": "f2",
+        "command": "editor.action.marker.next",
+        "when": "editorFocus"
+    },
+    {
+        "key": "alt+f8",
+        "command": "-editor.action.marker.next",
+        "when": "editorFocus"
+    },
+    {
+        "key": "cmd+l",
+        "command": "-expandLineSelection",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "f9",
+        "command": "-extension.miramac.node.cancel"
+    },
+    {
+        "key": "cmd+l cmd+p",
+        "command": "leetcode.previewProblem"
+    },
+    {
+        "key": "cmd+p",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "cmd+p",
+        "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
+        "when": "inFilesPicker && inQuickOpen"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "f2",
+        "command": "renameFile",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "enter",
+        "command": "-renameFile",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "cmd+i",
+        "command": "workbench.action.focusActiveEditorGroup"
+    },
+    {
+        "key": "shift+f12",
+        "command": "editor.action.goToReferences",
+        "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+    },
+    {
+        "key": "shift+f12",
+        "command": "-editor.action.goToReferences",
+        "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+    },
+    {
+        "key": "shift shift",
+        "command": "workbench.action.findInFiles"
+    },
+    {
+        "key": "shift shift",
+        "command": "-workbench.action.findInFiles"
+    },
+    {
+        "key": "shift shift",
+        "command": "workbench.action.terminal.searchWorkspace",
+        "when": "terminalFocus && terminalProcessSupported && terminalTextSelected"
+    },
+    {
+        "key": "shift shift",
+        "command": "-workbench.action.terminal.searchWorkspace",
+        "when": "terminalFocus && terminalProcessSupported && terminalTextSelected"
+    },
+    {
+        "key": "shift shift",
+        "command": "workbench.view.search",
+        "when": "workbench.view.search.active && neverMatch =~ /doesNotMatch/"
+    },
+    {
+        "key": "shift shift",
+        "command": "-workbench.view.search",
+        "when": "workbench.view.search.active && neverMatch =~ /doesNotMatch/"
+    },
+    {
+        "key": "cmd+f",
+        "command": "vim.remap",
+        "when": "inputFocus && vim.mode == 'Normal'",
+        "args": {
+            "after": ["/"]
+        }
+    },
+    {
+        "key": "cmd+shift+e",
+        "command": "workbench.view.explorer"
+    },
+    {
+        "key": "shift+cmd+t",
+        "command": "test-explorer.focus"
+    },
+    {
+        "key": "shift+cmd+t",
+        "command": "workbench.view.testing.focus"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "-github.copilot.generate",
+        "when": "editorTextFocus && github.copilot.activated && !inInteractiveInput && !interactiveEditorFocused"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "mysql.runSQL",
+        "when": "editorLangId == 'cql' || editorLangId == 'dbclient-js' || editorLangId == 'postgres' || editorLangId == 'sql'"
+    },
+    {
+        "key": "cmd+enter",
+        "command": "-mysql.runSQL",
+        "when": "editorLangId == 'cql' || editorLangId == 'dbclient-js' || editorLangId == 'postgres' || editorLangId == 'sql'"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "code-runner.run",
+        "when": "editorLangId == 'shellscript'|| editorLangId == 'powershell'|| editorLangId == 'javascript"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "-code-runner.run",
+        "when": "editorLangId == 'shellscript'|| editorLangId == 'powershell'|| editorLangId == 'javascript"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "mdb.runSelectedPlaygroundBlocks",
+        // "when": "editorLangId == 'mongodb'"
+        "when": "mdb.isPlayground"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "-mdb.runSelectedPlaygroundBlocks",
+        // "when": "editorLangId == 'mongodb'"
+        "when": "mdb.isPlayground"
+    },
+    {
+        "key": "cmd+q",
+        "command": "-workbench.action.quit"
+    }
+]
