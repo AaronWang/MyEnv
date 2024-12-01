@@ -16,6 +16,7 @@
         "*.scss": "scss",
         "*.mongodb": "javascript"
     },
+    "editor.smoothScrolling": true,
     //UI
     "terminal.integrated.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback', 'PowerlineSymbols'",
     //vim
@@ -77,6 +78,7 @@
     },
     //format, this setings should be in the workspace settings
     "editor.wordWrapColumn": 120,
+
     "javascript.updateImportsOnFileMove.enabled": "always",
     "js/ts.implicitProjectConfig.experimentalDecorators": true,
     "typescript.updateImportsOnFileMove.enabled": "always",
@@ -127,7 +129,6 @@
         "**/.factorypath": true,
         "**/node_modules": true
     },
-    "editor.smoothScrolling": true,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "explorer.openEditors.visible": 10,
