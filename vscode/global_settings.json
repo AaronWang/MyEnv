@@ -2,10 +2,20 @@
 // this settings file is for configuring the global settings
 // ln -s ~/Library/Application\ Support/Code/User/settings.json ~/MyEnv/vscode/global_settings.json
 {
-    //functions
+    //functions, it is not related to Extensions.
     "window.closeWhenEmpty": true,
     "debug.focusWindowOnBreak": false, //解决debug的时候非常卡顿
     "debug.onTaskErrors": "showErrors",
+    "files.associations": {
+        "*.vim": "vimrc",
+        ".ideavimrc": "vimrc",
+        "*.svg": "html",
+        "*.xml": "xml",
+        "*.plist": "html",
+        "*.json": "jsonc",
+        "*.scss": "scss",
+        "*.mongodb": "javascript"
+    },
     //UI
     "terminal.integrated.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback', 'PowerlineSymbols'",
     //vim
@@ -65,17 +75,8 @@
         ".js": "node $fullFileName ; rm -f $dirWithoutTrailingSlash/TempCodeRunnerFile.js",
         ".py": "python $fullFileName ; rm -f $dirWithoutTrailingSlash/TempCodeRunnerFile.py"
     },
+    //format, this setings should be in the workspace settings
     "editor.wordWrapColumn": 120,
-    "files.associations": {
-        "*.vim": "vimrc",
-        ".ideavimrc": "vimrc",
-        "*.svg": "html",
-        "*.xml": "xml",
-        "*.plist": "html",
-        "*.json": "jsonc",
-        "*.scss": "scss",
-        "*.mongodb": "javascript"
-    },
     "javascript.updateImportsOnFileMove.enabled": "always",
     "js/ts.implicitProjectConfig.experimentalDecorators": true,
     "typescript.updateImportsOnFileMove.enabled": "always",
