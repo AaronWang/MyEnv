@@ -3,8 +3,8 @@
 // ln -s ~/Library/Application\ Support/Code/User/settings.json ~/MyEnv/vscode/global_settings.json
 {
     //functions
-
     "window.closeWhenEmpty": true,
+    "debug.focusWindowOnBreak": false, //解决debug的时候非常卡顿
     //UI
     "terminal.integrated.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback', 'PowerlineSymbols'",
     //vim
@@ -64,7 +64,6 @@
         ".py": "python $fullFileName && rm -f $dirWithoutTrailingSlash/TempCodeRunnerFile.py"
     },
     "debug.onTaskErrors": "showErrors",
-    "debug.focusWindowOnBreak": false, //解决debug的时候非常卡顿
     "editor.wordWrapColumn": 120,
     "files.associations": {
         "*.vim": "vimrc",
