@@ -5,6 +5,7 @@
     //functions
     "window.closeWhenEmpty": true,
     "debug.focusWindowOnBreak": false, //解决debug的时候非常卡顿
+    "debug.onTaskErrors": "showErrors",
     //UI
     "terminal.integrated.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback', 'PowerlineSymbols'",
     //vim
@@ -46,6 +47,7 @@
             "after": ["p", "g", "v", "y"]
         }
     ],
+    //code-runner
     "code-runner.temporaryFileName": "TempCodeRunnerFile",
     "code-runner.runInTerminal": true,
     "code-runner.executorMap": {
@@ -57,13 +59,12 @@
         // "typescript": "node -r ${NVM_BIN}/../lib/node_modules/ts-node/register"
     },
     "code-runner.executorMapByFileExtension": {
-        ".mongodb": "mongosh < $fullFileName && rm -f $dirWithoutTrailingSlash/TempCodeRunnerFile.mongodb",
-        ".sh": "source $fullFileName && rm -f $dirWithoutTrailingSlash/TempCodeRunnerFile.sh",
-        ".ts": "ts-node --skip-project $fullFileName && rm -f $dirWithoutTrailingSlash/TempCodeRunnerFile.ts",
-        ".js": "node $fullFileName && rm -f $dirWithoutTrailingSlash/TempCodeRunnerFile.js",
-        ".py": "python $fullFileName && rm -f $dirWithoutTrailingSlash/TempCodeRunnerFile.py"
+        ".mongodb": "mongosh < $fullFileName ; rm -f $dirWithoutTrailingSlash/TempCodeRunnerFile.mongodb",
+        ".sh": "source $fullFileName ; rm -f $dirWithoutTrailingSlash/TempCodeRunnerFile.sh",
+        ".ts": "ts-node --skip-project $fullFileName ; rm -f $dirWithoutTrailingSlash/TempCodeRunnerFile.ts",
+        ".js": "node $fullFileName ; rm -f $dirWithoutTrailingSlash/TempCodeRunnerFile.js",
+        ".py": "python $fullFileName ; rm -f $dirWithoutTrailingSlash/TempCodeRunnerFile.py"
     },
-    "debug.onTaskErrors": "showErrors",
     "editor.wordWrapColumn": 120,
     "files.associations": {
         "*.vim": "vimrc",
