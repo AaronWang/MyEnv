@@ -17,6 +17,7 @@
         "*.mongodb": "javascript"
     },
     "editor.smoothScrolling": true,
+    "editor.cursorBlinking": "smooth",
     //UI
     "terminal.integrated.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback', 'PowerlineSymbols'",
     //vim
@@ -225,7 +226,6 @@
     "gitlens.codeLens.enabled": false,
     "editor.cursorSmoothCaretAnimation": "on",
     "vim.easymotion": true,
-    "editor.cursorBlinking": "smooth",
     // https://stackoverflow.com/questions/67843246/vscode-tab-color-not-responding-to-customization/67845465#67845465
     "workbench.colorCustomizations": {
         // "tab.activeBackground": "#000000",
