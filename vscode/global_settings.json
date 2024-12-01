@@ -306,7 +306,6 @@
         }
     },
     "settingsSync.ignoredSettings": ["-aws.samcli.location", "-vim.autoSwitchInputMethod.defaultIM"],
-    "github.copilot.editor.enableAutoCompletions": true,
     "python.condaPath": "/Users/aaron/micromamba/condabin/conda",
     "workbench.settings.applyToAllProfiles": ["aws.samcli.location"],
     "vim.autoSwitchInputMethod.enable": true,
@@ -328,6 +327,7 @@
         "ESP_ROM_ELF_DIR": "/Users/aaron/.espressif/tools/esp-rom-elfs/20240305/"
     },
     "idf.gitPath": "git",
+    "github.copilot.editor.enableAutoCompletions": true,
     "github.copilot.renameSuggestions.triggerAutomatically": false,
     "github.copilot.chat.runCommand.enabled": false,
     "github.copilot.chat.useProjectTemplates": false,
