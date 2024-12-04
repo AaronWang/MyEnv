@@ -58,7 +58,8 @@
             "after": ["p", "g", "v", "y"]
         }
     ],
-    //code-runner
+    //code-runner, it should not running in container or vscode devcontainer profile
+    // this plugin is related to system environment,but in dev container, it is not necessary to install other program cli
     "code-runner.temporaryFileName": "TempCodeRunnerFile",
     "code-runner.runInTerminal": true,
     "code-runner.executorMap": {
