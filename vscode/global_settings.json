@@ -85,7 +85,7 @@
     "typescript.updateImportsOnFileMove.enabled": "always",
     "js/ts.implicitProjectConfig.experimentalDecorators": true,
 
-    //should set to false, 保持源代码中的换行符, set to false, will remove the 换行符 in html
+    //should set to true(default), 保持源代码中的换行符, set to false, will remove the 换行符 in html
     // "html.format.preserveNewLines": false,
     "tabnine.experimentalAutoImports": true,
     "prettier.tabWidth": 4,
