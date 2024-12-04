@@ -7,6 +7,7 @@ indent_style = space
 indent_size = 4
 # insert_final_newline = true # 这行会在不输入的时候自动添加一个空行，不建议开启
 trim_trailing_whitespace = true
+# show a vertical line at 120 characters,but not wrap the line
 max_line_length = 120
 
 [*.{ts,js,scss,css}]
