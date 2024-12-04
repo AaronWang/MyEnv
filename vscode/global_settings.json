@@ -183,15 +183,6 @@
         "editor.formatOnType": true
     },
     "search.useReplacePreview": false,
-    "settingsSync.ignoredExtensions": [
-        "dart-code.dart-code",
-        "dart-code.flutter",
-        "leetcode.vscode-leetcode",
-        "xdebug.php-debug",
-        "sibvic.profitrobots-mq4-snippets",
-        "octref.vetur",
-        "eamodio.gitlens"
-    ],
     "github.copilot.advanced": {},
     "github.copilot.enable": {
         "*": true,
