@@ -79,6 +79,7 @@
     },
     //format, this setings should be in the project settings.json or in .prettierrc
     // "editor.wordWrapColumn": 120,
+
     //typescript extension
     "javascript.updateImportsOnFileMove.enabled": "always",
     "typescript.updateImportsOnFileMove.enabled": "always",
