@@ -79,10 +79,11 @@
     },
     //format, this setings should be in the workspace settings
     "editor.wordWrapColumn": 120,
+    //typescript extension
 
     "javascript.updateImportsOnFileMove.enabled": "always",
-    "js/ts.implicitProjectConfig.experimentalDecorators": true,
     "typescript.updateImportsOnFileMove.enabled": "always",
+    "js/ts.implicitProjectConfig.experimentalDecorators": true,
     "html.format.preserveNewLines": false,
     "tabnine.experimentalAutoImports": true,
     "prettier.tabWidth": 4,
