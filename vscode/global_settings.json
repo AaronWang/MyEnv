@@ -6,6 +6,11 @@
     "window.closeWhenEmpty": true,
     "debug.focusWindowOnBreak": false, //解决debug的时候非常卡顿
     "debug.onTaskErrors": "showErrors",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.factorypath": true,
+        "**/node_modules": true
+    },
     "files.associations": {
         "*.vim": "vimrc",
         ".ideavimrc": "vimrc",
@@ -16,8 +21,10 @@
         "*.scss": "scss",
         "*.mongodb": "javascript"
     },
+    "files.autoSave": "afterDelay",
     "editor.smoothScrolling": true,
     "editor.cursorBlinking": "smooth",
+    "editor.formatOnSave": true,
     //UI
     "terminal.integrated.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback', 'PowerlineSymbols'",
     //vim plugin
@@ -131,11 +138,6 @@
     },
     // "editor.suggestSelection": "first",
     "vsicons.dontShowNewVersionMessage": true,
-    "files.exclude": {
-        "**/.classpath": true,
-        "**/.factorypath": true,
-        "**/node_modules": true
-    },
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     "explorer.openEditors.visible": 10,
@@ -208,7 +210,6 @@
     "karmaTestExplorer.autoWatchBatchDelay": 10000,
     "git.autofetch": true,
     "explorer.confirmPasteNative": false,
-    "files.autoSave": "afterDelay",
     "mdb.confirmRunAll": false,
     "aws.codeWhisperer.shareCodeWhispererContentWithAWS": false,
     "aws.telemetry": false,
@@ -318,12 +319,11 @@
     "git.replaceTagsWhenPull": true,
     "chatgpt.lang": "en",
     "arduino.useArduinoCli": true,
-    "editor.formatOnSave": true,
     "cmake.pinnedCommands": ["workbench.action.tasks.configureTaskRunner", "workbench.action.tasks.runTask"],
+    "cmake.showConfigureWithDebuggerNotification": false,
     "clang-format.language.typescript.enable": false,
     "clang-format.language.java.enable": false,
     "clang-format.language.javascript.enable": false,
-    "cmake.showConfigureWithDebuggerNotification": false,
     "idf.espIdfPath": "/Users/aaron/esp/esp-idf",
     "idf.pythonBinPath": "/Users/aaron/.espressif/python_env/idf5.4_py3.8_env/bin/python",
     "idf.toolsPath": "/Users/aaron/.espressif",
