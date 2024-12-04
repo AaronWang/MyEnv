@@ -20,7 +20,7 @@
     "editor.cursorBlinking": "smooth",
     //UI
     "terminal.integrated.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback', 'PowerlineSymbols'",
-    //vim
+    //vim plugin
     "vim.useSystemClipboard": true,
     "vim.vimrc.enable": true,
     "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/local/bin/xkbswitch -ge",
