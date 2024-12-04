@@ -38,7 +38,6 @@
     "vim.easymotionMarkerForegroundColorOneChar": "Red",
     "vim.easymotionMarkerForegroundColorTwoCharFirst": "Red",
     "vim.easymotionMarkerForegroundColorTwoCharSecond": "Red",
-    //set comment
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": ["<leader>", "c", "c"],
