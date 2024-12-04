@@ -129,7 +129,7 @@
     "sqltools.format": {
         "linesBetweenQueries": 2
     },
-    "editor.suggestSelection": "first",
+    // "editor.suggestSelection": "first",
     "vsicons.dontShowNewVersionMessage": true,
     "files.exclude": {
         "**/.classpath": true,
