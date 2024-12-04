@@ -95,6 +95,8 @@
     // "prettier.singleQuote": true,
     // "prettier.bracketSpacing": true,
     // "prettier.bracketSameLine": true,
+
+    //set up formatter for different file types
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features" //default html formatter
     },
