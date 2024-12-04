@@ -88,12 +88,13 @@
     //should set to true(default), 保持源代码中的换行符, set to false, will remove the 换行符 in html
     // "html.format.preserveNewLines": false,
     "tabnine.experimentalAutoImports": true,
-    "prettier.tabWidth": 4,
-    "prettier.trailingComma": "none",
-    "prettier.printWidth": 120,
-    "prettier.singleQuote": true,
-    "prettier.bracketSpacing": true,
-    "prettier.bracketSameLine": true,
+    // set up the default formatter in .prettierrc.json
+    // "prettier.tabWidth": 4,
+    // "prettier.trailingComma": "none",
+    // "prettier.printWidth": 120,
+    // "prettier.singleQuote": true,
+    // "prettier.bracketSpacing": true,
+    // "prettier.bracketSameLine": true,
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features" //default html formatter
     },
