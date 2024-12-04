@@ -25,6 +25,9 @@
     "editor.smoothScrolling": true,
     "editor.cursorBlinking": "smooth",
     "editor.formatOnSave": true,
+    "editor.stickyScroll.enabled": false,
+        //format, this setings should be in the project settings.json or in .prettierrc
+    // "editor.wordWrapColumn": 120,
     //UI
     "terminal.integrated.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback', 'PowerlineSymbols'",
     //vim plugin
@@ -86,8 +89,6 @@
         ".js": "node $fullFileName ; rm -f $dirWithoutTrailingSlash/TempCodeRunnerFile.js",
         ".py": "python $fullFileName ; rm -f $dirWithoutTrailingSlash/TempCodeRunnerFile.py"
     },
-    //format, this setings should be in the project settings.json or in .prettierrc
-    // "editor.wordWrapColumn": 120,
 
     //typescript extension
     "javascript.updateImportsOnFileMove.enabled": "always",
@@ -231,12 +232,6 @@
     "editor.minimap.enabled": false,
     "eslint.codeActionsOnSave.mode": "problems",
     "workbench.tree.enableStickyScroll": false,
-    "gitlens.ai.experimental.provider": "openai",
-    "gitlens.ai.experimental.openai.model": "gpt-4-turbo",
-    "gitlens.codeLens.recentChange.enabled": false,
-    "gitlens.codeLens.authors.enabled": false,
-    "gitlens.currentLine.enabled": false,
-    "gitlens.codeLens.enabled": false,
     "editor.cursorSmoothCaretAnimation": "on",
     // https://stackoverflow.com/questions/67843246/vscode-tab-color-not-responding-to-customization/67845465#67845465
     "workbench.colorCustomizations": {
@@ -260,10 +255,6 @@
     ],
     // 配置commuity server connector, 否则自动连接java1.8版本,报错
     "rsp-ui.rsp.java.home": "~/.jenv/versions/20.0.2",
-    "gitlens.graph.minimap.additionalTypes": ["localBranches"],
-    "gitlens.graph.minimap.enabled": false,
-    "gitlens.blame.ignoreWhitespace": true,
-    "gitlens.graph.layout": "editor",
     "yaml.customTags": [
         "!And",
         "!And sequence",
@@ -295,9 +286,8 @@
     ],
     "gitdoc.autoPull": "off",
     "gitdoc.autoPush": "off",
-    "editor.stickyScroll.enabled": false,
-    "liveServer.settings.donotShowInfoMsg": true,
     "gitdoc.autoPullDelay": 1800000,
+    "liveServer.settings.donotShowInfoMsg": true,
     "gitlens.advanced.messages": {
         "suppressCreatePullRequestPrompt": true
     },
