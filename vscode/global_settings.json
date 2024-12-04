@@ -77,12 +77,12 @@
         ".js": "node $fullFileName ; rm -f $dirWithoutTrailingSlash/TempCodeRunnerFile.js",
         ".py": "python $fullFileName ; rm -f $dirWithoutTrailingSlash/TempCodeRunnerFile.py"
     },
-    //format, this setings should be in the workspace settings
-    "editor.wordWrapColumn": 120,
+    //format, this setings should be in the project settings.json or in .prettierrc
+    // "editor.wordWrapColumn": 120,
     //typescript extension
-
     "javascript.updateImportsOnFileMove.enabled": "always",
     "typescript.updateImportsOnFileMove.enabled": "always",
+
     "js/ts.implicitProjectConfig.experimentalDecorators": true,
     "html.format.preserveNewLines": false,
     "tabnine.experimentalAutoImports": true,
