@@ -83,8 +83,8 @@
     //typescript extension
     "javascript.updateImportsOnFileMove.enabled": "always",
     "typescript.updateImportsOnFileMove.enabled": "always",
-
     "js/ts.implicitProjectConfig.experimentalDecorators": true,
+
     "html.format.preserveNewLines": false,
     "tabnine.experimentalAutoImports": true,
     "prettier.tabWidth": 4,
