@@ -2,347 +2,350 @@
 // this settings file is for configuring the global settings
 // ln -s ~/Library/Application\ Support/Code/User/settings.json ~/MyEnv/vscode/global_settings.json
 {
-    //functions, it is not related to Extensions.
-    "window.closeWhenEmpty": true,
-    "debug.focusWindowOnBreak": false, //解决debug的时候非常卡顿
-    "debug.onTaskErrors": "showErrors",
-    "files.exclude": {
-        "**/.classpath": true,
-        "**/.factorypath": true,
-        "**/node_modules": true
+  //functions, it is not related to Extensions.
+  "window.closeWhenEmpty": true,
+  "debug.focusWindowOnBreak": false, //解决debug的时候非常卡顿
+  "debug.onTaskErrors": "showErrors",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/node_modules": true
+  },
+  "files.associations": {
+    "*.vim": "vimrc",
+    ".ideavimrc": "vimrc",
+    "*.svg": "html",
+    "*.xml": "xml",
+    "*.plist": "html",
+    "*.json": "jsonc",
+    "*.scss": "scss",
+    "*.mongodb": "javascript"
+  },
+  "files.autoSave": "afterDelay",
+  "editor.smoothScrolling": true,
+  "editor.cursorBlinking": "smooth",
+  "editor.formatOnSave": true,
+  "editor.stickyScroll.enabled": false,
+  //format, this setings should be in the project settings.json or in .prettierrc
+  // "editor.wordWrapColumn": 120,
+  //UI
+  "terminal.integrated.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback', 'PowerlineSymbols'",
+  //vim plugin
+  "vim.autoSwitchInputMethod.enable": true,
+  "vim.useSystemClipboard": true,
+  "vim.vimrc.enable": true,
+  "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/local/bin/xkbswitch -ge",
+  "vim.autoSwitchInputMethod.defaultIM": "US",
+  "vim.autoSwitchInputMethod.switchIMCmd": "/usr/local/bin/xkbswitch -se {im}",
+  "vim.hlsearch": true,
+  "vim.sneak": true,
+  "vim.easymotion": true,
+  "vim.sneakReplacesF": true,
+  "vim.sneakUseIgnorecaseAndSmartcase": true,
+  "vim.cursorStylePerMode.normal": "block",
+  "vim.commandLineModeKeyBindingsNonRecursive": [],
+  "vim.commandLineModeKeyBindings": [],
+  "vim.statusBarColorControl": false, //faster
+  "vim.statusBarColors.surroundinputmode": "",
+  "vim.easymotionMarkerForegroundColorOneChar": "Red",
+  "vim.easymotionMarkerForegroundColorTwoCharFirst": "Red",
+  "vim.easymotionMarkerForegroundColorTwoCharSecond": "Red",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "c", "c"],
+      "after": ["g", "c", "c"]
     },
-    "files.associations": {
-        "*.vim": "vimrc",
-        ".ideavimrc": "vimrc",
-        "*.svg": "html",
-        "*.xml": "xml",
-        "*.plist": "html",
-        "*.json": "jsonc",
-        "*.scss": "scss",
-        "*.mongodb": "javascript"
+    {
+      "before": ["f"],
+      "after": ["<leader>", "<leader>", "s"]
     },
-    "files.autoSave": "afterDelay",
-    "editor.smoothScrolling": true,
-    "editor.cursorBlinking": "smooth",
+    {
+      "before": ["s"],
+      "after": ["<leader>", "<leader>", "/"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["p"],
+      "after": ["p", "g", "v", "y"]
+    }
+  ],
+  //code-runner, it should not running in container or vscode devcontainer profile
+  // this plugin is related to system environment,but in dev container, it is not necessary to install other program cli
+  "code-runner.temporaryFileName": "TempCodeRunnerFile",
+  "code-runner.runInTerminal": true,
+  "code-runner.executorMap": {
+    "shellscript": null, //executorMap 比executorMapByFileExtenssion优先级高,这里必须设置成null，否则会调用默认bash命令
+    "javascript": null,
+    "typescript": null, //.vscode/settings.json 的配置，会覆盖这里的配置
+    "python": null
+    //使用当前目录版本的node的 ts-node
+    // "typescript": "node -r ${NVM_BIN}/../lib/node_modules/ts-node/register"
+  },
+  "code-runner.executorMapByFileExtension": {
+    ".mongodb": "mongosh < $fullFileName ; rm -f $dirWithoutTrailingSlash/TempCodeRunnerFile.mongodb",
+    ".sh": "source $fullFileName ; rm -f $dirWithoutTrailingSlash/TempCodeRunnerFile.sh",
+    ".ts": "ts-node --skip-project $fullFileName ; rm -f $dirWithoutTrailingSlash/TempCodeRunnerFile.ts",
+    ".js": "node $fullFileName ; rm -f $dirWithoutTrailingSlash/TempCodeRunnerFile.js",
+    ".py": "python $fullFileName ; rm -f $dirWithoutTrailingSlash/TempCodeRunnerFile.py"
+  },
+
+  //typescript extension
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "js/ts.implicitProjectConfig.experimentalDecorators": true,
+
+  //should set to true(default), 保持源代码中的换行符, set to false, will remove the 换行符 in html
+  // "html.format.preserveNewLines": false,
+  "tabnine.experimentalAutoImports": true,
+  // set up the default formatter in .prettierrc.json
+  // "prettier.tabWidth": 4,
+  // "prettier.trailingComma": "none",
+  // "prettier.printWidth": 120,
+  // "prettier.singleQuote": true,
+  // "prettier.bracketSpacing": true,
+  // "prettier.bracketSameLine": true,
+
+  //set up formatter for different file types
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features" //default html formatter
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[cpp]": {
+    // "editor.defaultFormatter": "xaver.clang-format"
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "[sql]": {
     "editor.formatOnSave": true,
-    "editor.stickyScroll.enabled": false,
-        //format, this setings should be in the project settings.json or in .prettierrc
-    // "editor.wordWrapColumn": 120,
-    //UI
-    "terminal.integrated.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback', 'PowerlineSymbols'",
-    //vim plugin
-    "vim.autoSwitchInputMethod.enable": true,
-    "vim.useSystemClipboard": true,
-    "vim.vimrc.enable": true,
-    "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/local/bin/xkbswitch -ge",
-    "vim.autoSwitchInputMethod.defaultIM": "US",
-    "vim.autoSwitchInputMethod.switchIMCmd": "/usr/local/bin/xkbswitch -se {im}",
-    "vim.hlsearch": true,
-    "vim.sneak": true,
-    "vim.easymotion": true,
-    "vim.sneakReplacesF": true,
-    "vim.sneakUseIgnorecaseAndSmartcase": true,
-    "vim.cursorStylePerMode.normal": "block",
-    "vim.commandLineModeKeyBindingsNonRecursive": [],
-    "vim.commandLineModeKeyBindings": [],
-    "vim.statusBarColorControl": false, //faster
-    "vim.statusBarColors.surroundinputmode": "",
-    "vim.easymotionMarkerForegroundColorOneChar": "Red",
-    "vim.easymotionMarkerForegroundColorTwoCharFirst": "Red",
-    "vim.easymotionMarkerForegroundColorTwoCharSecond": "Red",
-    "vim.normalModeKeyBindingsNonRecursive": [
-        {
-            "before": ["<leader>", "c", "c"],
-            "after": ["g", "c", "c"]
-        },
-        {
-            "before": ["f"],
-            "after": ["<leader>", "<leader>", "s"]
-        },
-        {
-            "before": ["s"],
-            "after": ["<leader>", "<leader>", "/"]
-        }
-    ],
-    "vim.visualModeKeyBindingsNonRecursive": [
-        {
-            "before": ["p"],
-            "after": ["p", "g", "v", "y"]
-        }
-    ],
-    //code-runner, it should not running in container or vscode devcontainer profile
-    // this plugin is related to system environment,but in dev container, it is not necessary to install other program cli
-    "code-runner.temporaryFileName": "TempCodeRunnerFile",
-    "code-runner.runInTerminal": true,
-    "code-runner.executorMap": {
-        "shellscript": null, //executorMap 比executorMapByFileExtenssion优先级高,这里必须设置成null，否则会调用默认bash命令
-        "javascript": null,
-        "typescript": null, //.vscode/settings.json 的配置，会覆盖这里的配置
-        "python": null
-        //使用当前目录版本的node的 ts-node
-        // "typescript": "node -r ${NVM_BIN}/../lib/node_modules/ts-node/register"
+    "editor.defaultFormatter": "mtxr.sqltools"
+  },
+  "sqltools.format": {
+    "linesBetweenQueries": 2
+  },
+  // "editor.suggestSelection": "first",
+  "vsicons.dontShowNewVersionMessage": true,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.openEditors.visible": 10,
+  "explorer.openEditors.sortOrder": "alphabetical",
+  "workbench.list.smoothScrolling": true,
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  "workbench.preferredDarkColorTheme": "Visual Studio Dark",
+  "editor.inlineSuggest.enabled": true,
+  "workbench.localHistory.maxFileEntries": 1,
+  "angular.forceStrictTemplates": true,
+  "markdownlint.config": {
+    "MD001": false,
+    "MD046": false
+  },
+  "python.venvPath": "~/.pyenv/versions",
+  "javascript.validate.enable": true,
+  "typescript.validate.enable": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "always"
+    // "source.fixAll.eslint": "explicit"
+  },
+  "eslint.validate": ["javascript", "typescript", "typescriptreact"],
+  "shellformat.effectLanguages": [
+    "shellscript",
+    "dockerfile",
+    "dotenv",
+    "hosts",
+    "jvmoptions",
+    "ignore",
+    "gitignore",
+    "properties",
+    "spring-boot-properties",
+    "azcli",
+    "bats"
+  ],
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "workbench.preferredLightColorTheme": "Quiet Light",
+  "html.format.indentHandlebars": true,
+  "workbench.preferredHighContrastColorTheme": "Visual Studio Light",
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "search.useReplacePreview": false,
+  "github.copilot.advanced": {},
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "scminput": false,
+    "markdown": true
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "search.followSymlinks": false,
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1,
+    "asvetliakov.vscode-neovim": 1
+  },
+  "git.openRepositoryInParentFolders": "never",
+  "git.autofetch": true,
+  "git.allowForcePush": true,
+  "git.replaceTagsWhenPull": true,
+  "git.suggestSmartCommit": false,
+  "application.shellEnvironmentResolutionTimeout": 60,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "karmaTestExplorer.autoWatchEnabled": false,
+  "karmaTestExplorer.autoWatchBatchDelay": 10000,
+  "explorer.confirmPasteNative": false,
+  "mdb.confirmRunAll": false,
+  "aws.codeWhisperer.shareCodeWhispererContentWithAWS": false,
+  "aws.telemetry": false,
+  "aws.codeWhisperer.importRecommendation": false,
+  "aws.codeWhisperer.includeSuggestionsWithCodeReferences": false,
+  "aws.ecs.openTerminalCommand": "/bin/zsh",
+  "aws.stepfunctions.asl.format.enable": false,
+  "aws.logLevel": "error",
+  "aws.suppressPrompts": {
+    "samcliConfirmDevStack": true
+  },
+  "aws.samcli.enableCodeLenses": true,
+  "aws.lambda.recentlyUploaded": {
+    "profile:default": {
+      "ap-southeast-2": "test"
     },
-    "code-runner.executorMapByFileExtension": {
-        ".mongodb": "mongosh < $fullFileName ; rm -f $dirWithoutTrailingSlash/TempCodeRunnerFile.mongodb",
-        ".sh": "source $fullFileName ; rm -f $dirWithoutTrailingSlash/TempCodeRunnerFile.sh",
-        ".ts": "ts-node --skip-project $fullFileName ; rm -f $dirWithoutTrailingSlash/TempCodeRunnerFile.ts",
-        ".js": "node $fullFileName ; rm -f $dirWithoutTrailingSlash/TempCodeRunnerFile.js",
-        ".py": "python $fullFileName ; rm -f $dirWithoutTrailingSlash/TempCodeRunnerFile.py"
+    "profile:aaron": {
+      "ap-southeast-2": "api"
+    }
+  },
+  "gitdoc.commitOnClose": false,
+  "gitdoc.pullOnOpen": false,
+  "editor.minimap.enabled": false,
+  "eslint.codeActionsOnSave.mode": "problems",
+  "workbench.tree.enableStickyScroll": false,
+  "editor.cursorSmoothCaretAnimation": "on",
+  // https://stackoverflow.com/questions/67843246/vscode-tab-color-not-responding-to-customization/67845465#67845465
+  "workbench.colorCustomizations": {
+    // "tab.activeBackground": "#000000",
+    // "sideBar.background": "#000000" // 左右 ,exploer ,debug
+    // "editorGroupHeader.tabsBackground": "#000000", // top tabs background
+    // "activityBar.background": "#000000", //left side bar background
+    "[Sublime Material Theme - Dark]": {
+      // "editor.selectionBackground": "#00000000"
+      // "editor.selectionForeground": "#00000000"
+    }
+  },
+  "window.commandCenter": false,
+  "editor.linkedEditing": true,
+  "rsp-ui.enableStartServerOnActivation": [
+    {
+      "id": "redhat.vscode-community-server-connector",
+      "name": "Community Server Connector",
+      "startOnActivation": true
+    }
+  ],
+  // 配置commuity server connector, 否则自动连接java1.8版本,报错
+  "rsp-ui.rsp.java.home": "~/.jenv/versions/20.0.2",
+  "yaml.customTags": [
+    "!And",
+    "!And sequence",
+    "!If",
+    "!If sequence",
+    "!Not",
+    "!Not sequence",
+    "!Equals",
+    "!Equals sequence",
+    "!Or",
+    "!Or sequence",
+    "!FindInMap",
+    "!FindInMap sequence",
+    "!Base64",
+    "!Join",
+    "!Join sequence",
+    "!Cidr",
+    "!Ref",
+    "!Sub",
+    "!Sub sequence",
+    "!GetAtt",
+    "!GetAZs",
+    "!ImportValue",
+    "!ImportValue sequence",
+    "!Select",
+    "!Select sequence",
+    "!Split",
+    "!Split sequence"
+  ],
+  "gitdoc.autoPull": "off",
+  "gitdoc.autoPush": "off",
+  "gitdoc.autoPullDelay": 1800000,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "gitlens.advanced.messages": {
+    "suppressCreatePullRequestPrompt": true
+  },
+  "hediet.vscode-drawio.resizeImages": null,
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.colorTheme": "Solarized Light",
+  "cmake.showOptionsMovedNotification": false,
+  "python.condaPath": "/Users/aaron/micromamba/condabin/conda",
+  "chatgpt.lang": "en",
+  "arduino.useArduinoCli": true,
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+  ],
+  "cmake.showConfigureWithDebuggerNotification": false,
+  "clang-format.language.typescript.enable": false,
+  "clang-format.language.java.enable": false,
+  "clang-format.language.javascript.enable": false,
+  "idf.espIdfPath": "/Users/aaron/esp/esp-idf",
+  "idf.pythonBinPath": "/Users/aaron/.espressif/python_env/idf5.4_py3.8_env/bin/python",
+  "idf.toolsPath": "/Users/aaron/.espressif",
+  "idf.customExtraPaths": "/Users/aaron/.espressif/tools/xtensa-esp-elf-gdb/14.2_20240403/xtensa-esp-elf-gdb/bin:/Users/aaron/.espressif/tools/riscv32-esp-elf-gdb/14.2_20240403/riscv32-esp-elf-gdb/bin:/Users/aaron/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/bin:/Users/aaron/.espressif/tools/riscv32-esp-elf/esp-13.2.0_20240530/riscv32-esp-elf/bin:/Users/aaron/.espressif/tools/esp32ulp-elf/2.38_20240113/esp32ulp-elf/bin:/Users/aaron/.espressif/tools/openocd-esp32/v0.12.0-esp32-20240318/openocd-esp32/bin:/Users/aaron/.espressif/tools/esp-rom-elfs/20240305",
+  "idf.customExtraVars": {
+    "OPENOCD_SCRIPTS": "/Users/aaron/.espressif/tools/openocd-esp32/v0.12.0-esp32-20240318/openocd-esp32/share/openocd/scripts",
+    "ESP_ROM_ELF_DIR": "/Users/aaron/.espressif/tools/esp-rom-elfs/20240305/"
+  },
+  "idf.gitPath": "git",
+  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.renameSuggestions.triggerAutomatically": false,
+  "github.copilot.chat.runCommand.enabled": false,
+  "github.copilot.chat.useProjectTemplates": false,
+  "xml.fileAssociations": [],
+  "xmlComplete.formattingStyle": "multiLineAttributes",
+  "xmlComplete.schemaMapping": [
+    {
+      "xmlns": "http://www.w3.org/2001/XMLSchema",
+      "xsdUri": "https://www.w3.org/2001/XMLSchema.xsd"
     },
-
-    //typescript extension
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "js/ts.implicitProjectConfig.experimentalDecorators": true,
-
-    //should set to true(default), 保持源代码中的换行符, set to false, will remove the 换行符 in html
-    // "html.format.preserveNewLines": false,
-    "tabnine.experimentalAutoImports": true,
-    // set up the default formatter in .prettierrc.json
-    // "prettier.tabWidth": 4,
-    // "prettier.trailingComma": "none",
-    // "prettier.printWidth": 120,
-    // "prettier.singleQuote": true,
-    // "prettier.bracketSpacing": true,
-    // "prettier.bracketSameLine": true,
-
-    //set up formatter for different file types
-    "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features" //default html formatter
+    {
+      "xmlns": "https://github.com/avaloniaui",
+      "xsdUri": "https://raw.githubusercontent.com/rogalmic/vscode-xml-complete/master/test/Avalonia/AvaloniaXamlSchema.xsd"
     },
-    "[markdown]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+      "xmlns": "http://schemas.microsoft.com/winfx/2006/xaml/presentation",
+      "xsdUri": "https://raw.githubusercontent.com/rogalmic/vscode-xml-complete/master/test/Wpf/Wpf.xsd"
     },
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+      "xmlns": "http://www.w3.org/2000/svg",
+      "xsdUri": "https://raw.githubusercontent.com/dumistoklus/svg-xsd-schema/master/svg.xsd https://raw.githubusercontent.com/dumistoklus/svg-xsd-schema/master/xlink.xsd https://raw.githubusercontent.com/dumistoklus/svg-xsd-schema/master/namespace.xsd"
     },
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[scss]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[jsonc]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[cpp]": {
-        // "editor.defaultFormatter": "xaver.clang-format"
-        "editor.defaultFormatter": "ms-vscode.cpptools"
-    },
-    "[sql]": {
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "mtxr.sqltools"
-    },
-    "sqltools.format": {
-        "linesBetweenQueries": 2
-    },
-    // "editor.suggestSelection": "first",
-    "vsicons.dontShowNewVersionMessage": true,
-    "explorer.confirmDelete": false,
-    "explorer.confirmDragAndDrop": false,
-    "explorer.openEditors.visible": 10,
-    "explorer.openEditors.sortOrder": "alphabetical",
-    "workbench.list.smoothScrolling": true,
-    "editor.unicodeHighlight.invisibleCharacters": false,
-    "workbench.preferredDarkColorTheme": "Visual Studio Dark",
-    "editor.inlineSuggest.enabled": true,
-    "workbench.localHistory.maxFileEntries": 1,
-    "angular.forceStrictTemplates": true,
-    "markdownlint.config": {
-        "MD001": false,
-        "MD046": false
-    },
-    "python.venvPath": "~/.pyenv/versions",
-    "javascript.validate.enable": true,
-    "typescript.validate.enable": true,
-    "editor.codeActionsOnSave": {
-        "source.organizeImports": "always"
-        // "source.fixAll.eslint": "explicit"
-    },
-    "eslint.validate": ["javascript", "typescript", "typescriptreact"],
-    "shellformat.effectLanguages": [
-        "shellscript",
-        "dockerfile",
-        "dotenv",
-        "hosts",
-        "jvmoptions",
-        "ignore",
-        "gitignore",
-        "properties",
-        "spring-boot-properties",
-        "azcli",
-        "bats"
-    ],
-    "terminal.integrated.defaultProfile.osx": "zsh",
-    "workbench.preferredLightColorTheme": "Quiet Light",
-    "html.format.indentHandlebars": true,
-    "workbench.preferredHighContrastColorTheme": "Visual Studio Light",
-    "[python]": {
-        "editor.formatOnType": true
-    },
-    "search.useReplacePreview": false,
-    "github.copilot.advanced": {},
-    "github.copilot.enable": {
-        "*": true,
-        "plaintext": true,
-        "scminput": false,
-        "markdown": true
-    },
-    "security.workspace.trust.untrustedFiles": "open",
-    "search.followSymlinks": false,
-    "extensions.experimental.affinity": {
-        "vscodevim.vim": 1,
-        "asvetliakov.vscode-neovim": 1
-    },
-    "git.openRepositoryInParentFolders": "never",
-    "git.autofetch": true,
-    "git.allowForcePush": true,
-    "git.replaceTagsWhenPull": true,
-    "git.suggestSmartCommit": false,
-    "application.shellEnvironmentResolutionTimeout": 60,
-    "editor.unicodeHighlight.ambiguousCharacters": false,
-    "karmaTestExplorer.autoWatchEnabled": false,
-    "karmaTestExplorer.autoWatchBatchDelay": 10000,
-    "explorer.confirmPasteNative": false,
-    "mdb.confirmRunAll": false,
-    "aws.codeWhisperer.shareCodeWhispererContentWithAWS": false,
-    "aws.telemetry": false,
-    "aws.codeWhisperer.importRecommendation": false,
-    "aws.codeWhisperer.includeSuggestionsWithCodeReferences": false,
-    "aws.ecs.openTerminalCommand": "/bin/zsh",
-    "aws.stepfunctions.asl.format.enable": false,
-    "aws.logLevel": "error",
-    "aws.suppressPrompts": {
-        "samcliConfirmDevStack": true
-    },
-    "aws.samcli.enableCodeLenses": true,
-    "aws.lambda.recentlyUploaded": {
-        "profile:default": {
-            "ap-southeast-2": "test"
-        },
-        "profile:aaron": {
-            "ap-southeast-2": "api"
-        }
-    },
-    "gitdoc.commitOnClose": false,
-    "gitdoc.pullOnOpen": false,
-    "editor.minimap.enabled": false,
-    "eslint.codeActionsOnSave.mode": "problems",
-    "workbench.tree.enableStickyScroll": false,
-    "editor.cursorSmoothCaretAnimation": "on",
-    // https://stackoverflow.com/questions/67843246/vscode-tab-color-not-responding-to-customization/67845465#67845465
-    "workbench.colorCustomizations": {
-        // "tab.activeBackground": "#000000",
-        // "sideBar.background": "#000000" // 左右 ,exploer ,debug
-        // "editorGroupHeader.tabsBackground": "#000000", // top tabs background
-        // "activityBar.background": "#000000", //left side bar background
-        "[Sublime Material Theme - Dark]": {
-            // "editor.selectionBackground": "#00000000"
-            // "editor.selectionForeground": "#00000000"
-        }
-    },
-    "window.commandCenter": false,
-    "editor.linkedEditing": true,
-    "rsp-ui.enableStartServerOnActivation": [
-        {
-            "id": "redhat.vscode-community-server-connector",
-            "name": "Community Server Connector",
-            "startOnActivation": true
-        }
-    ],
-    // 配置commuity server connector, 否则自动连接java1.8版本,报错
-    "rsp-ui.rsp.java.home": "~/.jenv/versions/20.0.2",
-    "yaml.customTags": [
-        "!And",
-        "!And sequence",
-        "!If",
-        "!If sequence",
-        "!Not",
-        "!Not sequence",
-        "!Equals",
-        "!Equals sequence",
-        "!Or",
-        "!Or sequence",
-        "!FindInMap",
-        "!FindInMap sequence",
-        "!Base64",
-        "!Join",
-        "!Join sequence",
-        "!Cidr",
-        "!Ref",
-        "!Sub",
-        "!Sub sequence",
-        "!GetAtt",
-        "!GetAZs",
-        "!ImportValue",
-        "!ImportValue sequence",
-        "!Select",
-        "!Select sequence",
-        "!Split",
-        "!Split sequence"
-    ],
-    "gitdoc.autoPull": "off",
-    "gitdoc.autoPush": "off",
-    "gitdoc.autoPullDelay": 1800000,
-    "liveServer.settings.donotShowInfoMsg": true,
-    "gitlens.advanced.messages": {
-        "suppressCreatePullRequestPrompt": true
-    },
-    "hediet.vscode-drawio.resizeImages": null,
-    "workbench.iconTheme": "vscode-icons",
-    "workbench.colorTheme": "Solarized Light",
-    "cmake.showOptionsMovedNotification": false,
-    "python.condaPath": "/Users/aaron/micromamba/condabin/conda",
-    "chatgpt.lang": "en",
-    "arduino.useArduinoCli": true,
-    "cmake.pinnedCommands": ["workbench.action.tasks.configureTaskRunner", "workbench.action.tasks.runTask"],
-    "cmake.showConfigureWithDebuggerNotification": false,
-    "clang-format.language.typescript.enable": false,
-    "clang-format.language.java.enable": false,
-    "clang-format.language.javascript.enable": false,
-    "idf.espIdfPath": "/Users/aaron/esp/esp-idf",
-    "idf.pythonBinPath": "/Users/aaron/.espressif/python_env/idf5.4_py3.8_env/bin/python",
-    "idf.toolsPath": "/Users/aaron/.espressif",
-    "idf.customExtraPaths": "/Users/aaron/.espressif/tools/xtensa-esp-elf-gdb/14.2_20240403/xtensa-esp-elf-gdb/bin:/Users/aaron/.espressif/tools/riscv32-esp-elf-gdb/14.2_20240403/riscv32-esp-elf-gdb/bin:/Users/aaron/.espressif/tools/xtensa-esp-elf/esp-13.2.0_20240530/xtensa-esp-elf/bin:/Users/aaron/.espressif/tools/riscv32-esp-elf/esp-13.2.0_20240530/riscv32-esp-elf/bin:/Users/aaron/.espressif/tools/esp32ulp-elf/2.38_20240113/esp32ulp-elf/bin:/Users/aaron/.espressif/tools/openocd-esp32/v0.12.0-esp32-20240318/openocd-esp32/bin:/Users/aaron/.espressif/tools/esp-rom-elfs/20240305",
-    "idf.customExtraVars": {
-        "OPENOCD_SCRIPTS": "/Users/aaron/.espressif/tools/openocd-esp32/v0.12.0-esp32-20240318/openocd-esp32/share/openocd/scripts",
-        "ESP_ROM_ELF_DIR": "/Users/aaron/.espressif/tools/esp-rom-elfs/20240305/"
-    },
-    "idf.gitPath": "git",
-    "github.copilot.editor.enableAutoCompletions": true,
-    "github.copilot.renameSuggestions.triggerAutomatically": false,
-    "github.copilot.chat.runCommand.enabled": false,
-    "github.copilot.chat.useProjectTemplates": false,
-    "xml.fileAssociations": [],
-    "xmlComplete.formattingStyle": "multiLineAttributes",
-    "xmlComplete.schemaMapping": [
-        {
-            "xmlns": "http://www.w3.org/2001/XMLSchema",
-            "xsdUri": "https://www.w3.org/2001/XMLSchema.xsd"
-        },
-        {
-            "xmlns": "https://github.com/avaloniaui",
-            "xsdUri": "https://raw.githubusercontent.com/rogalmic/vscode-xml-complete/master/test/Avalonia/AvaloniaXamlSchema.xsd"
-        },
-        {
-            "xmlns": "http://schemas.microsoft.com/winfx/2006/xaml/presentation",
-            "xsdUri": "https://raw.githubusercontent.com/rogalmic/vscode-xml-complete/master/test/Wpf/Wpf.xsd"
-        },
-        {
-            "xmlns": "http://www.w3.org/2000/svg",
-            "xsdUri": "https://raw.githubusercontent.com/dumistoklus/svg-xsd-schema/master/svg.xsd https://raw.githubusercontent.com/dumistoklus/svg-xsd-schema/master/xlink.xsd https://raw.githubusercontent.com/dumistoklus/svg-xsd-schema/master/namespace.xsd"
-        },
-        {
-            "xmlns": "http://schemas.microsoft.com/developer/msbuild/2003",
-            "xsdUri": "https://raw.githubusercontent.com/Microsoft/msbuild/master/src/MSBuild/MSBuild/Microsoft.Build.CommonTypes.xsd https://raw.githubusercontent.com/Microsoft/msbuild/master/src/MSBuild/MSBuild/Microsoft.Build.Core.xsd"
-        }
-    ],
-    "database-client.autoSync": true,
-    "[dockerfile]": {
-        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
-    },
-    "dev.containers.defaultExtensionsIfInstalledLocally": []
+    {
+      "xmlns": "http://schemas.microsoft.com/developer/msbuild/2003",
+      "xsdUri": "https://raw.githubusercontent.com/Microsoft/msbuild/master/src/MSBuild/MSBuild/Microsoft.Build.CommonTypes.xsd https://raw.githubusercontent.com/Microsoft/msbuild/master/src/MSBuild/MSBuild/Microsoft.Build.Core.xsd"
+    }
+  ],
+  "database-client.autoSync": true,
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "dev.containers.defaultExtensionsIfInstalledLocally": []
 }
