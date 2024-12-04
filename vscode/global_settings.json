@@ -214,6 +214,18 @@
     "aws.ecs.openTerminalCommand": "/bin/zsh",
     "aws.stepfunctions.asl.format.enable": false,
     "aws.logLevel": "error",
+    "aws.suppressPrompts": {
+        "samcliConfirmDevStack": true
+    },
+    "aws.samcli.enableCodeLenses": true,
+    "aws.lambda.recentlyUploaded": {
+        "profile:default": {
+            "ap-southeast-2": "test"
+        },
+        "profile:aaron": {
+            "ap-southeast-2": "api"
+        }
+    },
     "gitdoc.commitOnClose": false,
     "gitdoc.pullOnOpen": false,
     "editor.minimap.enabled": false,
@@ -293,21 +305,7 @@
     "workbench.iconTheme": "vscode-icons",
     "workbench.colorTheme": "Solarized Light",
     "cmake.showOptionsMovedNotification": false,
-    "aws.suppressPrompts": {
-        "samcliConfirmDevStack": true
-    },
-    "aws.samcli.enableCodeLenses": true,
-    "aws.lambda.recentlyUploaded": {
-        "profile:default": {
-            "ap-southeast-2": "test"
-        },
-        "profile:aaron": {
-            "ap-southeast-2": "api"
-        }
-    },
-    "settingsSync.ignoredSettings": ["-aws.samcli.location", "-vim.autoSwitchInputMethod.defaultIM"],
     "python.condaPath": "/Users/aaron/micromamba/condabin/conda",
-    "workbench.settings.applyToAllProfiles": ["aws.samcli.location"],
     "chatgpt.lang": "en",
     "arduino.useArduinoCli": true,
     "cmake.pinnedCommands": ["workbench.action.tasks.configureTaskRunner", "workbench.action.tasks.runTask"],
