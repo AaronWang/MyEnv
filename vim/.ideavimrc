@@ -115,8 +115,9 @@ set easymotion
 " nmap f <Leader><Leader>w
 " nmap f <Plug>(easymotion-f)
 " nmap F <Plug>(easymotion-F)
-nmap s <Plug>(easymotion-s)
-nmap f <Plug>(easymotion-s)
+" nmap s <Plug>(easymotion-s)
+" nmap f <Plug>(easymotion-s)
+" nmap f <Plug>(easymotion-overwin-f)
 
 "AceJump   ctrl+; 输入跳转的字符
 

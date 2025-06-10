@@ -76,7 +76,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 #
 # plugins=(git zsh-syntax-highlighting zsh-autosuggestions autojump extract rand-quote vi-mode colored-man-pages sudo catimg)
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions autojump extract vi-mode colored-man-pages sudo autoenv)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions autojump extract vi-mode colored-man-pages sudo)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -159,9 +159,16 @@ source /usr/local/powerline/powerline/bindings/zsh/powerline.zsh
 TERM=xterm
 export TERM
 
+# after brew install nvm, run commands below to set up nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"                                       # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+if [[ $(uname -m) == 'arm64' ]]; then
+    # Apple Silicon
+    [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+else
+    # Intel Mac
+    [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"                                       # This loads nvm
+    [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+fi
 
 # start quote and cowsay
 # quote|cowsay
@@ -189,6 +196,7 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 # source <(ng completion script)
 
 export GEM_HOME="$HOME/.gem"
+export PATH="$HOME/.gem/bin:$PATH" # 添加gem的bin目录到PATH中，gem install的命令会自动安装到这个目录下(不能使用 sudo)
 
 # node's configure option, increate default memory limit to 4096MB
 export NODE_OPTIONS="--max-old-space-size=4096"
@@ -227,4 +235,12 @@ load-nvmrc
 # setup CATELINA_HOME after install tomcat
 export CATALINA_HOME="/usr/local/Cellar/tomcat/10.1.18/libexec"
 # export DOCKER_HOST="unix://$HOME/.colima/docker.sock"
-export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+# setup ruby path
+if [[ $(uname -m) == 'arm64' ]]; then
+    # Apple Silicon
+    export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+else
+    # Intel Mac
+    export PATH="/usr/local/opt/ruby/bin:$PATH"
+fi
